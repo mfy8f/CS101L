@@ -7,7 +7,7 @@ def Encrypt(string_text, int_key):
         c = string_text[value] 
         if (c.isupper()): 
             b += chr((ord(c) + int_key-65) % 26 + 65) 
-        elif(c.islower()): 
+        if(c.islower()): 
             b += chr((ord(c) + int_key-97) % 26 + 97) 
         else:
             b += c
@@ -19,7 +19,7 @@ def Decrypt(string_text, int_key):
         c = string_text[value] 
         if (c.isupper()): 
             b += chr((ord(c) - int_key-65) % 26 + 65) 
-        elif(c.islower()): 
+        if(c.islower()): 
             b += chr((ord(c) - int_key-97) % 26 + 97) 
         else:
             b += c
@@ -33,7 +33,7 @@ def Get_input():
 
 
 def Print_menu():
-  print("\nMain Menu")
+  print("Main Menu")
   print("1) Encode a String")
   print("2) Decode a String")
   print("Q) Quit")
